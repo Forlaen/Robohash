@@ -4,3 +4,5 @@
 *.Pluric*Settings*
 nohup.out
 __pycache__
+
+robohash-venv/

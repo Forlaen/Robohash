@@ -93,7 +93,7 @@ class Robohash(object):
         directories = []
         for root, dirs, files in natsort.natsorted(os.walk(path, topdown=False)):
             for name in dirs:
-                if name[:1] is not '.':
+                if name[:1] != '.':
                     directories.append(os.path.join(root, name))
                     directories = natsort.natsorted(directories)
 
@@ -164,7 +164,7 @@ class Robohash(object):
 
         roboparts = self._get_list_of_files(self.resourcedir + 'sets/' + roboset)
         # Now that we've sorted them by the first number, we need to sort each sub-category by the second.
-        roboparts.sort(key=lambda x: x.split("#")[1])
+        roboparts.sort()
         if bgset is not None:
                 bglist = []
                 backgrounds = natsort.natsorted(os.listdir(self.resourcedir + 'backgrounds/' + bgset))
